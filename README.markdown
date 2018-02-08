@@ -45,6 +45,8 @@ Our overarching goals are clarity, consistency and brevity, in that order.
   * [Failing Guards](#failing-guards)
 * [Semicolons](#semicolons)
 * [Parentheses](#parentheses)
+* [Unit Testing](#unit-testing)
+  * [Naming Test Methods](#naming-test-methods)
 * [Organization and Bundle Identifier](#organization-and-bundle-identifier)
 * [Copyright Statement](#copyright-statement)
 * [Smiley Face](#smiley-face)
@@ -892,6 +894,34 @@ In larger expressions, optional parentheses can sometimes make code read more cl
 **Preferred:**
 ```swift
 let playerMark = (player == current ? "X" : "O")
+```
+
+## Unit Testing
+
+Unless instructed otherwise, use `XCTest` **without** any third party frameworks to unit test apps or demonstrate unit testing.
+
+### Naming Test Meth
+
+Our test method names need to be: 
+* Clear about what the test state is.
+* Specific about the expected behaviour.
+* Consistent throughout our entire test suite. 
+
+Use the following naming convention for **all** unit test method names:
+
+```swift
+func test_methodName_GivenStateUnderTest_ShouldExpectedBehavior()
+```
+
+**Example:**
+
+```swift
+func test_invertName_GivenAnEmptyString_ShouldReturnEmptyString() {
+  let inputName = ""
+  let expectedOutput = ""
+  let nameFormatter = NameFormatter(name: inputName)
+  XCTAssertEqual(nameFormatter.inverted(), expectedOutput)
+}
 ```
 
 ## Organization and Bundle Identifier
