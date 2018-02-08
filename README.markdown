@@ -900,7 +900,7 @@ let playerMark = (player == current ? "X" : "O")
 
 Unless instructed otherwise, use `XCTest` **without** any third party frameworks to unit test apps or demonstrate unit testing.
 
-### Naming Test Meth
+### Naming Test Methods
 
 Our test method names need to be: 
 * Clear about what the test state is.
